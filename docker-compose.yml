@@ -1,0 +1,19 @@
+services:
+  rocky-chrome:
+    image: rocky-chrome
+    environment:
+      - DISPLAY=${DISPLAY}
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /root/.de/chrome/chrome-profile:/home/chrome/user/.config/google-chrome
+    devices:
+      - /dev/snd:/dev/snd
+    deploy:
+      resources:
+        limits:
+          memory: 4g
+    shm_size: 2g
+    cap_add:
+      - SYS_ADMIN
+    security_opt:
+      - seccomp=unconfined
