@@ -6,6 +6,7 @@ services:
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
       - /root/.de/chrome/chrome-profile:/home/chromeuser/.config/google-chrome
+      - /usr/share/fonts:/usr/share/fonts:ro
       - /root/Downloads:/home/chromeuser/Downloads
     devices:
       - /dev/snd:/dev/snd
